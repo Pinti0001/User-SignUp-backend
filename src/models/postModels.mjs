@@ -1,11 +1,17 @@
 import mongoose from 'mongoose';
 
 const postSchema = new mongoose.Schema({
+    title : {
+        type : String,
+        required : true
+    },
+    postImageLink : {
+        type : String,
+        required : true
+    },
     content : {
         type : String,
-    },
-    description : {
-        type : String
+        required : true
     },
     author : {
         type : String,
@@ -13,12 +19,6 @@ const postSchema = new mongoose.Schema({
         toLowerCase : true,
         required : true,
     },
-    comments : {
-        type : Number,
-    },
-    title : {
-        type : String
-    }
 }, {timestamps : true})
 
 export default mongoose.model("Post", postSchema)
